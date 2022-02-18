@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/Okdo
+    - export DEPLOYPATH=/Okdo/back/OKDO/public
     - /bin/cp -R images $DEPLOYPATH
