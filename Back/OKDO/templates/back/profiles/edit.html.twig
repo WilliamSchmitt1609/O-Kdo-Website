@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Profiles</title>
+
+{% block body %}
+    <h1>Edit Profiles</h1>
+
+    {{ include('back/profiles/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('back_profiles_index') }}">back to list</a>
+
+    {{ include('back/profiles/_delete_form.html.twig') }}
+{% endblock %}

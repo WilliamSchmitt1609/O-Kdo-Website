@@ -1,0 +1,22 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.profilesEditContent{
+
+  .main{
+
+    @include mixins.desktop {
+      background-image: url("https://cdn.discordapp.com/attachments/931465835552313344/940309628649103400/AdobeStock_306970269.jpeg");
+      background-repeat: no-repeat;
+      background-size:cover;
+      height: 100%;
+ 
+      background-position:center;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+    }
+   
+  }
+}

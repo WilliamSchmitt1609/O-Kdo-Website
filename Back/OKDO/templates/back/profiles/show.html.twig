@@ -1,0 +1,34 @@
+{% extends "back/navbar.html.twig" %}
+<title>Profiles</title>
+
+{% block body %}
+    <h1>Profiles</h1>
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ profile.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ profile.name }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ profile.createdAt ? profile.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ profile.updatedAt ? profile.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_profiles_index') }}">back to list</a>
+
+    <a href="{{ path('back_profiles_edit', {'id': profile.id}) }}">edit</a>
+
+    {{ include('back/profiles/_delete_form.html.twig') }}
+{% endblock %}

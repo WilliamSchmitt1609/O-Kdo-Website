@@ -1,0 +1,36 @@
+{% extends "back/navbar.html.twig" %}
+
+{% block body %}
+
+<div class="p-5 h-screen bg-gray-100">
+<h1 class="text-xl mb-2 flex justify-center p-12 capitalize font-semibold tracking-wide">Event index</h1>
+<div class="p-6">
+    <a class="border-4 border-gray border-dotted-800" href="{{ path('back_event_new') }}">New Event</a>
+</div>
+<div class="overflow-auto rounded-lg shadow">
+    <table class="w-full">
+        <thead class="bg-gray-50 border-b-2 border-gray-200">
+            <tr class="bg-gray-300">
+                <th class="p-3 txt-sm font-semibold tracking-wide text-left">Id</th>
+                <th class="p-3 txt-sm font-semibold tracking-wide text-left">Label</th>
+                <th class="p-3 txt-sm font-semibold tracking-wide text-left">actions</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+        {% for event in events %}
+            <tr class="odd:bg-white even:bg-slate-100">
+                <td class='p-3 text-sm text-gray-700'>{{ event.id }}</td>
+                <td class='p-3 text-sm text-gray-700'>{{ event.label }}</td>
+                <td>
+                    <a class="border-2 border-gray" href="{{ path('back_event_show', {'id': event.id}) }}">show</a>
+                    <a class="border-2 border-gray" href="{{ path('back_event_edit', {'id': event.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

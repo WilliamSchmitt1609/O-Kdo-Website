@@ -1,0 +1,15 @@
+.container {
+    width: 100vw;
+    max-width: 100vw !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 40%;
+}
+
+

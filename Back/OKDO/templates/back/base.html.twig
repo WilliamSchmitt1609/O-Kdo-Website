@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="{{ app.request.locale }}">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Bienvenue dans le Back Office d'OKDO !{% endblock %}</title>
+<!--Tailwind -->
+ <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+<link href="https://unpkg.com/@tailwindcss/forms/dist/forms.min.css" rel="stylesheet">
+<!--OWN CSS-->
+<link rel="stylesheet" href="{{ asset('assets/style.css') }}">
+ <script>
+   tailwind.config = {
+     theme: {
+      extend: {
+        colors: {
+          Okdo: '#2f4f4f',
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body>
+
+<header class="p-12 border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4 bg-Okdo">
+  
+  <!-- Logo text or image -->
+  <div class="flex items-center justify-between mb-4 md:mb-0  ">
+      <h1 class="leading-none text-2xl text-grey-darkest">
+        <a class="no-underline text-white font-semibold hover:text-yellow-500" href="{{ path('back_main_home') }}">
+        OKDO Back office
+        </a>
+      </h1>
+    <img class="mx-3 mb-1 w-8 h-8" src="https://cdn.pixabay.com/photo/2017/10/20/20/37/gift-boxes-2872745_960_720.png" alt="logo">
+    <a class="text-white hover:text-orange md:hidden" href="#">
+      <i class="fa fa-2x fa-bars"></i>
+    </a>
+  </div>
+    <div class="navbar-nav" class="hidden md:block md:ml-10 md:pr-4 md:space-x-8 width: 100% bg-transparent text-transform: capitalize;">
+
+        <a href="{{ path('back_category_index') }}" class="p-4 text-transform: uppercase font-medium hover:text-yellow-500 text-white ">Categories</a>
+
+        <a href="{{ path('back_genre_index') }}" class="p-4 text-transform: uppercase font-medium hover:hover:text-yellow-500 text-white ">Genres</a>
+
+        <a href="{{ path('back_age_index') }}" class="p-4 text-transform: uppercase font-medium hover:hover:text-yellow-500 text-white ">Ages</a>
+
+        <a href="{{ path('back_event_index') }}" class=" p-4 flex-grow: 1 text-transform: uppercase font-medium hover:hover:text-yellow-500 text-white">Events</a>
+
+        <a href="{{ path('back_product_index') }}" class=" p-4 text-transform: uppercase font-medium hover:hover:text-yellow-500 text-white">Products</a>
+
+        <a href="{{ path('back_user_index') }}" class="pl-4 text-transform: uppercase font-medium hover:hover:text-yellow-500 text-white">Users</a>
+
+        {% if is_granted('ROLE_MANAGER') %}
+        <a href="{{ path('login_logout') }}" class="pl-4 text-transform: uppercase font-medium hover:hover:text-yellow-500 text-white">Déconnexion</a>
+        
+
+         {% else %}
+                <a href="{{ path('login_index') }}" class="pl-4 text-transform: uppercase font-medium hover:text-yellow-500 text-white">CONNEXION</a></button>
+        {% endif %}
+      </div>
+</header>
+
+{% block nav %}{% endblock %}
+{% block body %}{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>   
+    <script src="https://unpkg.com/vue-cookies@1.7.4/vue-cookies.js"></script>
+    <script src="./assets/js/vue.js"></script>
+</body>
+</html>

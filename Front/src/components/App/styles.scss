@@ -1,0 +1,10 @@
+@use 'src/styles/vars';
+
+.app {
+  width: auto;
+  text-align: center;
+  color: vars.$primaryColor;
+  position: relative;
+}
+
+

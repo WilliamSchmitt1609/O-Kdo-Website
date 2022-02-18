@@ -1,0 +1,84 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+
+.form{
+
+  @include mixins.desktop {
+    width: 50%;
+
+  }
+
+
+  .profilEdit-title{
+    color:vars.$headerFooterColor;
+    margin-bottom:1rem;
+    margin-top:1rem;
+    font-weight:bold;
+    font-size: 2rem;
+    @include mixins.desktop {
+      color:vars.$primaryColor;
+     
+    }
+  }
+
+  .profilEditForm{
+    width: 80%;
+    margin: auto;
+    @include mixins.desktop {
+      height: 100%;
+      width: 100%;
+      padding: 0 7rem;
+      
+      
+    }
+
+
+    p{
+      font-size: 1rem;
+      font-weight: bold;
+      color: vars.$thirdColor;
+      
+    }
+
+    .input{
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: vars.$radius;
+      background-color: vars.$headerFooterColor;
+      border: 1px solid vars.$headerFooterColor;
+      font-family: vars.$font;
+      color: vars.$primaryColor;
+      text-align: center;
+      font-size: 1.5rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      
+    }
+    .input::placeholder {
+      color:vars.$primaryColor;
+    }
+
+    .profilSubmit{
+
+      border-radius: 10px;
+      border: 1px solid vars.$headerFooterColor;
+      background-color: vars.$headerFooterColor;
+      color: white;
+      font-family: vars.$font;
+      font-size: 1.3rem;
+      padding: 0.5rem;
+    }
+
+    .profilSubmit:hover{
+
+      background-color: vars.$headerFooterColor;
+      color:vars.$primaryColor;
+    }
+
+    .multiSelect{
+      margin-top: 1rem;
+    }
+  }
+}

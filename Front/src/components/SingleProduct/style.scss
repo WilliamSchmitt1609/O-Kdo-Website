@@ -1,0 +1,59 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+
+.singleProductContent{
+
+  @include mixins.desktop {
+    background-color: vars.$primaryColor;
+   }
+
+  .reply {
+    margin-right: 0.5rem;
+  }
+  
+  .main--product {
+    margin: 0;
+    .submitButton--single {
+      margin-top: 0rem;
+      margin-bottom: 2.5rem;
+      @include mixins.desktop {
+        margin-bottom: 4rem;
+        position: absolute;
+        top:12%;
+        left: 2%;
+      }
+    }
+
+    .mobile{
+      @include mixins.desktop {
+        display: none;
+      }
+    }
+
+    .desktop{
+      display: none;
+      @include mixins.desktop {
+        display: block;
+      }
+    }
+  
+    .submitButton {
+      border-radius: 10px;
+      border: 1px solid vars.$headerFooterColor;
+      background-color: vars.$headerFooterColor; 
+      color: vars.$primaryColor;
+      font-family: vars.$font;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+    
+    
+    .submitButton:hover{
+    
+      background-color: vars.$primaryColor;
+      color: vars.$headerFooterColor;
+    }
+  }
+  
+}

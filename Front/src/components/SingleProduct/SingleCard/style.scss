@@ -1,0 +1,86 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+
+.content--product{
+
+  @include mixins.desktop {
+   display: flex;
+   height: 90vh;
+  }
+
+  .productName {
+    margin-bottom: 1rem;
+    @include mixins.desktop {
+      margin-left: 2rem;
+     }
+  }
+
+  .productInfo{
+
+    @include mixins.desktop {
+      margin-left: 2rem;
+     }
+  }
+
+  .fit-picture--single {
+    height: 260px;
+    border-radius: 0;
+    @include mixins.desktop {
+      height: 100%;
+     }
+  }
+  
+  .submitButton--buy {
+    margin: 1rem 1rem;
+  }
+
+  .submitButton {
+    border-radius: 10px;
+    border: 1px solid vars.$headerFooterColor;
+    background-color: vars.$headerFooterColor;
+    color: vars.$primaryColor;
+    font-family: vars.$font;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  
+  .submitButton:hover{
+  
+    background-color:vars.$primaryColor;
+    color: vars.$headerFooterColor; 
+  }
+  
+  .productInfo--tags {
+    margin-top: 0.5rem;
+  }
+  
+  .productInfo--price {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .info {
+    margin-top: 1.5rem;
+    color: vars.$headerFooterColor;
+    @include mixins.desktop {
+      margin: 0;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      text-align: left;
+      background-color: vars.$primaryColor;
+     }
+  }
+
+  .img {
+    @include mixins.desktop {
+      width: 50%;
+     }
+  }
+}
+
+
+
+

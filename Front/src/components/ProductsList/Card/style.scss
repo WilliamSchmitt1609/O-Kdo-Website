@@ -1,0 +1,61 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.card{
+  width: 80vw;
+  margin: auto;
+  border: 1px solid ;
+  border-radius: vars.$radius;
+  font-size: 1.5rem;
+  text-align:left;
+  padding-bottom: 1rem;
+  background-color: vars.$primaryColor;
+  color: vars.$headerFooterColor;
+  margin-bottom: 2rem;
+  height: 23rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mixins.desktop {
+    width: 23rem;
+    margin: 2rem 2rem 2rem 2rem;
+  }
+}
+
+.fit-picture{
+  // max-width: 100%;
+  // max-height: 100%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: vars.$radius vars.$radius 0 0;
+}
+
+.info{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  // display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productName{
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+.productInfo{
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
+  &.price {
+    font-weight: bold;
+  }
+}
+
+.tags{
+  padding-left: 1rem;
+}

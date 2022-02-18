@@ -1,0 +1,44 @@
+@use 'reset';
+@use 'vars';
+
+body {
+  font-family: sans-serif;
+  font-family: vars.$font;
+  background-color: vars.$secondaryColor;
+  font-size: vars.$fontSize;
+
+}
+
+* {
+  border-color: 1px solid red;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.main{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.invisible-div{
+  height: 5rem;
+}
+
+/* 
+  // or you can import your own font
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.ttf');
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+*/
+
+

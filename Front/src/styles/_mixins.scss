@@ -1,0 +1,10 @@
+@use 'src/styles/map';
+
+// Media query for desktop
+@mixin desktop {
+  @media screen and (min-width: map-get(map.$breakpoints, desktop)) {
+      @content;
+  }
+} 
+
+

@@ -1,0 +1,27 @@
+@use 'src/styles/mixins';
+@use 'src/styles/vars';
+
+.profilesContent{
+
+  .main{
+    margin-top: 2rem;
+    .profilPage {
+      position: relative;
+    }
+  }
+
+  .profiles-title {
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: vars.$headerFooterColor;
+  }
+
+  .cardsContainer {
+    @include mixins.desktop {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+}

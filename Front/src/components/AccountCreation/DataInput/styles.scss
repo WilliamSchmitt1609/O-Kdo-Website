@@ -1,0 +1,109 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.account-form {
+
+  padding-right: 2rem;
+  padding-left: 2rem;
+  @include mixins.desktop{
+    padding-right: 7rem;
+    padding-left: 7rem;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .page-title{
+    color: vars.$headerFooterColor;
+    font-size: 2rem;
+    margin-bottom:3rem;
+    font-weight:bold;
+    @include mixins.desktop {
+    color:vars.$primaryColor;
+    margin-bottom:2.5rem;
+
+    
+  
+    }
+
+  }
+
+  .input-style {
+    width: 100%;
+    display:flex;
+    align-self: center;
+    font-family: vars.$font;
+    font-size: 1.5rem;
+    border: 1px solid vars.$headerFooterColor;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top:1rem;
+    background-color: vars.$headerFooterColor;
+    color: vars.$primaryColor;
+    // font-weight: bold;
+    
+  }
+
+  .input-style::placeholder {
+    color:vars.$primaryColor;
+  }
+                                    
+   
+  .submitButton {
+     border-radius: 10px vars.$radius;
+     border: 1px solid vars.$headerFooterColor;
+     background-color:vars.$headerFooterColor ;
+     font-family: vars.$font;
+     font-size: 1.5rem;
+     padding: 0.5rem;
+     margin:auto;
+     margin-top:1rem;
+     color: vars.$primaryColor;
+     @include mixins.desktop {
+       margin-bottom: 0%;
+    }
+  }
+   
+  .submitButton:hover{
+  
+    background-color: vars.$headerFooterColor; 
+    color: vars.$primaryColor;
+  }
+  
+  .low-style{
+    font-size:0.8rem;
+    display: flex;
+    justify-content: left;
+    padding:0.3rem;
+    color:vars.$headerFooterColor;
+    @include mixins.desktop{
+      color:vars.$primaryColor;
+    }
+  a {
+    padding-left:0.2rem;
+  }
+  
+  }
+  
+
+  
+  .legalTerms{
+    font-size:0.8rem;
+    text-align: center;
+  margin-top: 0.5rem;
+    padding:0.3rem;
+    color:vars.$headerFooterColor;
+    @include mixins.desktop{
+      color:vars.$primaryColor;
+    }
+    
+  }
+  .password {
+  margin-bottom:0;
+    
+  }
+}
+
+
+

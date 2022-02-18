@@ -1,0 +1,130 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.profilCard{
+
+  width: 80vw;
+  margin: auto;
+  border: 1px solid vars.$headerFooterColor;
+  border-radius: vars.$radius;
+  font-size: 1.5rem;
+  text-align:left;
+  padding: 1rem;
+  background-color: vars.$primaryColor;
+  color: vars.$headerFooterColor;
+  margin-bottom: 2rem;
+  position: relative;
+  /* Animation for card's apparition */
+  animation: apparition 1.3s ease-in-out forwards;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  &:hover{
+    transform: scale(1.1);
+    z-index: 5;
+  }
+  @include mixins.desktop {
+    width: 25rem;
+    height: 33rem;
+  }
+
+  .cardProfilInfo{
+
+    // padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;  
+    flex-flow: row wrap;
+    
+
+    .profilName{
+
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+  
+    .profilInfo{
+  
+      font-size: 0.7rem;
+      font-weight:bold;
+      margin-bottom: 0.5rem;
+      color: vars.$primaryColor;
+      border-radius:10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-align: center;
+      width: 40%;
+      &.cat {
+        background-color:#f1da70;
+      }
+      &.age {
+        background-color: rgb(35, 183, 202);
+      }
+      &.genre {
+        background-color: rgb(175, 81, 81);
+      }
+      &.label {
+        background-color: rgb(105, 131, 105);
+      }
+    
+    }
+  }
+
+  .profilOptions{
+
+    display: flex;
+    justify-content: space-between;
+    padding-top:5px;
+    margin-top: 1rem;
+    @include mixins.desktop {
+    position: absolute;
+    bottom: 3%;
+    width: 90%;
+    }
+
+    .profilSearchButton{
+
+      border-radius: 10px;
+      border: 1px solid vars.$headerFooterColor;
+      background-color: vars.$headerFooterColor;
+      color: vars.$secondaryColor;
+      font-family: vars.$font;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+
+    .profilSearchButton:hover{
+
+      background-color: vars.$secondaryColor;
+      color: vars.$headerFooterColor;
+    }
+  }
+
+  .profil-picture{
+
+    display: none;
+    @include mixins.desktop {
+      display: block;
+      height: 15rem;
+      margin: auto;
+    }
+  }
+
+  .profilIcons{
+    cursor: pointer;
+  }
+
+  
+}
+
+@keyframes apparition {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+

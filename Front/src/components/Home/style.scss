@@ -1,0 +1,44 @@
+@use 'src/styles/mixins';
+
+.homeContent{
+
+  .main{
+    @include mixins.desktop {
+      background-image: url("https://media.discordapp.net/attachments/934036971783864360/940595211233529896/okdohome_3.jpg?width=1414&height=670");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      display: flex;
+      background-position: center;
+      justify-content: flex-end;
+      align-items: center;
+      
+    }
+
+    .homeForm{
+      @include mixins.desktop {
+
+        width: 50%;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+
+    .welcomeText-container{
+      @include mixins.desktop {
+      display:flex;
+      width: 100%;
+    }
+  }
+  .form-container{
+    @include mixins.desktop {
+      display:flex;
+      width: 100%;
+    }
+
+  }
+  
+
+
+  }
+}

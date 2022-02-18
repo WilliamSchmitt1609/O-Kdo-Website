@@ -1,0 +1,86 @@
+@use 'src/styles/vars';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: vars.$headerFooterColor;
+  height: 4.5rem;
+  margin-bottom: vars.$paddingBottom;
+  padding: 10px;
+  // To fix the header on top
+  position: fixed;
+  top: 0%;
+  width: 100vw;
+  z-index: 6;
+
+  .logo{
+    color: vars.$secondaryColor;
+    img{
+      height: 2rem;
+      width: auto;
+    }
+    
+   
+    
+  }
+  .logo-link {
+    display:flex; 
+    align-items:center;
+
+  }
+  img {
+
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    width:3rem;
+    height:3rem;
+
+  }
+
+  .button{
+    background-color: vars.$headerFooterColor;
+    border: none;
+    width: 7rem;
+    color: vars.$headerIconColor;
+  }
+  .logo-title {
+    font-size:1.5rem;
+    margin-left:0.2rem;
+    margin-top: 1rem;
+    color: vars.$headerIconColor;
+    
+  }
+
+  .hello p{
+    color: vars.$primaryColor;
+  }
+
+  .hello{
+    position:absolute;
+    top:95%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: vars.$headerFooterColor;
+    padding: 2rem;
+    width: fit-content;
+    border-radius: 0 0 vars.$radius vars.$radius;
+    z-index: 0;
+
+    &.fade-in{
+      transition: opacity 1s ease;
+    }
+
+    &.fade-out {
+      opacity: 0;
+      transition: opacity 1s ease;
+  }
+
+  }
+}
+//   .logo-title, img {
+//     size: 1rem;
+//   }
+// }
+

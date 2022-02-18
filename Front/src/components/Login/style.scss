@@ -1,0 +1,217 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.loginPopUp{
+  background: vars.$headerFooterColor;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  z-index: 7;
+  color: vars.$headerFooterColor;
+  @include mixins.desktop {
+    width: 30rem;
+    height: 20rem;
+    top:0%;
+    border-radius: 0 0 0 vars.$radius;
+  }
+
+  &.logged {
+    @include mixins.desktop {
+      height: 10rem;
+    }
+  }
+
+  .backoffice-access{
+    font-size:1rem;
+    margin-top:1.5rem;
+    color: vars.$primaryColor;
+    padding-top: 0;
+    
+   
+    &:hover {
+      color: vars.$thirdColor;
+      background-color: vars.$headerFooterColor;
+    }
+  }
+
+  position: fixed;
+  top: 0%;
+  right:100%;
+  // To pass over the select buttons
+  z-index: 7;
+  &--close{
+    animation: rightToLeft 1.2s forwards ease;
+    @include mixins.desktop {
+      animation: desktopRightToLeft 1.2s forwards ease;
+    }
+  }
+  &--open{
+    animation: leftToRight 1.2s forwards ease;
+    @include mixins.desktop {
+      animation: desktopLeftToRight 1.2s forwards ease;
+    }
+  }
+
+  .connexionButton {
+    border-radius: 10px;
+      border: 1px solid vars.$secondaryColor;
+      background-color: vars.$primaryColor;
+      color:vars.$headerFooterColor;
+     
+   
+      font-family: vars.$font;
+      font-size: 1.3rem;
+      padding: 0.5rem;
+      // to have the good proportions even with flexbox
+      width: auto;
+  } 
+
+
+  .deco{
+    height: fit-content;
+    align-self: center;
+  }
+
+  .accountCreation-login{
+    font-size:1rem;
+    margin-top:1.5rem;
+    color: vars.$primaryColor;
+
+  }
+
+  .accountCreation-login:hover{
+
+    background-color: unset;
+    color: vars.$linkColor;
+  }
+
+  .input{
+
+    width: 100%;
+    @include mixins.desktop{
+      width:100%;
+    }
+   
+     
+    display:flex;
+    align-self: center;
+    font-family: vars.$font;
+    font-size: 1.3rem;
+    border: 1px solid vars.$headerFooterColor;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top:1rem;
+    background-color: vars.$secondaryColor;
+  }
+
+  .connexionButton:hover{
+    background-color: vars.$headerFooterColor;
+    color:vars.$primaryColor;
+  }
+  .closeButton{
+    color: vars.$headerIconColor;
+  }
+
+  a{
+    display: block;
+    padding-top: 1.5rem;
+  }
+
+  h1{
+    font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+  }
+
+  a:hover{
+    background: vars.$secondaryColor;
+  }
+
+  .loginContainer{
+    display: flex;
+
+    justify-content: space-between;
+    background-color: vars.$headerFooterColor;
+    width: 100%;
+
+    // padding-top: 2rem;
+    @include mixins.desktop {
+      height: 100%;
+      align-items: center;
+      border-radius: 0 0 0 vars.$radius;
+      width: 30rem;
+      justify-content: space-between;
+      
+    }
+    
+  }
+
+  .singleLoginForm {
+    margin-bottom: 1rem;
+  }
+
+  .loginForm {
+    margin: auto 0;
+  }
+
+  .icon{
+    width: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 0.5rem;
+    align-self: flex-start;
+  }
+
+  input{
+
+    width: 100%;
+  }
+
+  .wrapContainer {
+    margin: auto 0;
+  }
+
+
+  // Annimation on the menu comming from left to right
+  @keyframes leftToRight {
+    0% {
+      right: -30rem;
+    }
+    100% {
+      right: 0%;
+    }
+  }
+
+  // Annimation on the menu comming from right to left for desktop
+  @keyframes rightToLeft {
+    0% {
+      right: 0%;
+    }
+    100% {
+      right: -30rem;
+    }
+  }
+
+  // Annimation on the menu comming from left to right for desktop
+  @keyframes desktopLeftToRight {
+    0% {
+      right: -30rem;
+    }
+    100% {
+      right: 0%;
+    }
+  }
+
+  // Annimation on the menu comming from right to left
+  @keyframes desktopRightToLeft {
+    0% {
+      right: 0%;
+    }
+    100% {
+      right: -30rem;
+    }
+  }
+}

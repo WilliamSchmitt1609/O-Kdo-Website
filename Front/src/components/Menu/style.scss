@@ -1,0 +1,130 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.menu{
+  background: vars.$headerFooterColor;
+  height: 100vh;
+  width: 100%;
+  @include mixins.desktop {
+    width: 30rem;
+  }
+  position: fixed;
+  top: 0%;
+  left:-100%;
+  // To pass over the select buttons
+  z-index: 7;
+  &--close{
+    animation: rightToLeftMenu 1.2s forwards ease;
+    @include mixins.desktop {
+      animation: desktopRightToLeftMenu 1.2s forwards ease;
+    }
+  }
+  &--open{
+    animation: leftToRightMenu 1.2s forwards ease;
+    @include mixins.desktop {
+      animation: desktopLeftToRightMenu 1.2s forwards ease;
+    }
+  }
+
+  p,a{
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: initial;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    color: vars.$secondaryColor;
+
+  }
+
+  .allProfiles{
+    font-weight: bold;
+  }
+
+  .profileMenu-title:last-child{
+    border-bottom: 1px solid white;
+  }
+
+  .profileMenu-title{
+    padding: 0.2rem;
+    &:hover p {
+      color: vars.$linkColor;
+    }
+  }
+
+
+  h1{
+    font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  a:hover{
+    background: vars.$headerFooterColor;
+    color: vars.$linkColor;
+  }
+
+  .headerTitle{
+    display: flex;
+    justify-content: center;
+    background-color: vars.$headerFooterColor;
+  }
+
+  .icon{
+    width: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color:#F6C358;
+    margin-right: auto;
+  }
+
+  .linkContact {
+    font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+
+  // Annimation on the menu comming from left to right
+  @keyframes leftToRightMenu {
+    0% {
+      left: -30rem;
+    }
+    100% {
+      left: 0%;
+      top: 0;
+    }
+  }
+
+  // Annimation on the menu comming from right to left for desktop
+  @keyframes rightToLeftMenu {
+    0% {
+      left: 0%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  // Annimation on the menu comming from left to right for desktop
+  @keyframes desktopLeftToRightMenu {
+    0% {
+      left: -30rem;
+    }
+    100% {
+      left: 0%;
+    }
+  }
+
+  // Annimation on the menu comming from right to left
+  @keyframes desktopRightToLeftMenu {
+    0% {
+      left: 0%;
+    }
+    100% {
+      left: -30rem;
+    }
+  }
+}
+
+

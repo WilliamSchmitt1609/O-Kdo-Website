@@ -1,0 +1,11 @@
+{% extends "back/base.html.twig" %}
+
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-xl mb-2 flex justify-center p-12 capitalize font-semibold tracking-wide">Edit Product</h1>
+        <div class="form-container">
+        {{ include('back/product/_form.html.twig', {'button_label': 'Update'}) }}
+        </div>
+    </div>
+{% endblock %}

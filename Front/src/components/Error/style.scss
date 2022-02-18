@@ -1,0 +1,17 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.errorContent{
+  p{
+    color: vars.$headerFooterColor; 
+   }
+
+   .gif{
+     margin: 2rem;
+     @include mixins.desktop {
+     width: 30rem;
+     }
+   }
+}
+
+

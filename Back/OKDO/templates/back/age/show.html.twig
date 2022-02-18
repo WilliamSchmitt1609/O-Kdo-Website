@@ -1,0 +1,56 @@
+{% extends "back/navbar.html.twig" %}
+
+{% block body %}
+   <div class="p-4 w-3/4 bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700 mt-6 ml-6">
+    <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Age</h3>
+   </div>
+   <div class="flow-root">
+        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Id
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        {{ age.id }}
+                    </div>
+                </div>
+            </li>
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Label
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        {{ age.label }}
+                    </div>
+                </div>
+            </li>
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Value
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        {{ age.value }}
+                    </div>
+                </div>
+            </li>
+        </ul>
+   </div>
+    <div class="flex flex-wrap space-x-4 space-x-reverse">
+    <a class="mx-2 mt-5 font-medium px-3 py-2 bg-zinc-300 text-white rounded-lg hover:bg-slate-700 hover:text-white" href="{{ path('back_age_index') }}">back to list</a>
+    <a class ="mt-5 font-medium px-3 py-2 bg-yellow-500 text-white rounded-lg hover:bg-slate-600 hover:white" href="{{ path('back_age_edit', {'id': age.id}) }}">edit</a>
+    {{ include('back/age/_delete_form.html.twig') }}
+
+</div> 
+    
+
+{% endblock %}

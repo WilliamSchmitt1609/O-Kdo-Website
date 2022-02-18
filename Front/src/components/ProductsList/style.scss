@@ -1,0 +1,165 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.productListContent{
+
+  .main{
+    position: relative;
+  }
+
+  .invisible-div{
+
+    height: 6rem;
+  }
+
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 28%;
+    @include mixins.desktop {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 2rem 2rem 2rem;
+      margin-top: 4rem;
+    }
+    
+    a {
+      /* Animation for card's apparition */
+      animation: apparition 1.3s ease-in-out forwards;
+      cursor: pointer;
+      transition-duration: 0.5s;
+      &:hover{
+        transform: scale(1.1);
+        z-index: 5;
+      }
+    }
+  } 
+  
+  .submitButton {
+    border-radius: 10px;
+    border: 1px solid vars.$headerFooterColor;
+    background-color: vars.$headerFooterColor;
+    color: vars.$primaryColor;
+    font-family: vars.$font;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: auto;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    right: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+  
+    width: 10rem;
+    @include mixins.desktop {
+      margin-top: 0;
+      width: 17rem;
+    }
+    &.OK {
+      position:unset; 
+    }
+  }
+  
+
+  .productList-title {
+    margin-top: 5rem;
+    font-size:1.5rem;
+    justify-content:flex-star
+   
+
+
+  }
+
+
+
+  .submitButton:hover{
+
+    background-color: vars.$primaryColor;
+    color: vars.$headerFooterColor;
+  }
+
+  .saveButton{
+
+    position: absolute;
+    top: 8rem;
+    left: 2.5rem;
+    background-color: vars.$secondaryColor;
+    border: none;
+    color: vars.$headerFooterColor;
+    @include mixins.desktop {
+      top: 7.5rem;
+      left: 10rem;
+    }
+  }
+
+  .saveInput{
+    position: fixed;
+    // Used to center the div on the middle of the screen
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    background-color: vars.$secondaryColor;
+    border: 4px solid vars.$thirdColor;
+    width: 70%;
+    padding:1rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    z-index: 7;
+    @include mixins.desktop{
+      padding: 1.5rem;
+      width:50%;
+    }
+    
+    .inputSaveSearch {
+      width: 100%;
+      color: vars.$headerFooterColor;
+      
+      @include mixins.desktop{
+        width:100%;
+      }
+   
+     
+      display:flex;
+      align-self: center;
+      font-family: vars.$font;
+      font-size: 1rem;
+      border: 1px solid vars.$headerFooterColor;
+      border-radius: 5px;
+      padding: 5px;
+      padding-top: 0.5rem;
+      margin-bottom: 1rem;
+      margin-top:1rem;
+      background-color: vars.$secondaryColor;
+    }
+  
+    .saveInput--title {
+    font-size: 1.5rem;
+    color: vars.$headerFooterColor;
+    }
+
+    .accountLink{
+      font-size: 1rem;
+      margin-top: 2rem;
+      color: vars.$headerIconColor;
+      cursor: pointer;
+    }
+
+    .accountLink:hover{
+      color: vars.$linkColor;
+    }
+  
+  }
+}
+
+@keyframes apparition {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+

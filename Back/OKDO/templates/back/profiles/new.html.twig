@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Profiles</title>
+
+{% block body %}
+    <h1>Create new Profiles</h1>
+
+    {{ include('back/profiles/_form.html.twig') }}
+
+    <a href="{{ path('back_profiles_index') }}">back to list</a>
+{% endblock %}

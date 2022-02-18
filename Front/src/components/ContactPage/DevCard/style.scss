@@ -1,0 +1,60 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+
+.teamCard{
+
+  width: 80vw;
+  margin: auto;
+  border: 1px solid vars.$headerFooterColor;
+  border-radius: vars.$radius;
+  font-size: 1.5rem;
+  text-align:left;
+  padding: 1rem;
+  background-color: vars.$primaryColor;
+  color: vars.$headerFooterColor;
+  margin-bottom: 2rem;
+  position: relative;
+  /* Animation for card's apparition */
+  animation: apparition 1.3s ease-in-out forwards;
+  transition-duration: 0.5s;
+  text-align: center;
+  @include mixins.desktop {
+    width:22rem;
+  }
+  
+  .teamCard {
+    margin-bottom: 1rem;
+  }
+  
+  img{
+    width: 15rem;
+    height: 100%;
+    margin: auto;
+  }
+
+  .info {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .teamName{
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .team{
+    font-size: 0.7rem;
+      font-weight:bold;
+      margin-bottom: 0.5rem;
+      color: vars.$primaryColor;
+      border-radius:10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-align: center;
+      width: 40%;
+      margin: auto;
+      margin-top: 1rem;
+
+  }
+}

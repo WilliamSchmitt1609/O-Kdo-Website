@@ -1,0 +1,103 @@
+security:
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+         # On place les deux firewalls de LexikJWT avant notre firewall "main"
+        login:
+            pattern: ^/api/login
+            stateless: true
+            json_login:
+                check_path: /api/login_check
+                username_path: email
+                password_path: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+            
+                # Le firewall de notre API => à adapter selon nos besoins
+        api_secure:
+            pattern:   ^/api/secure
+            stateless: true
+            jwt: ~
+        
+        api:
+            pattern:   ^/api
+            stateless: true
+            
+
+        main:
+            lazy: true
+            provider: app_user_provider
+            form_login:
+                # name of the route created previously
+                login_path: login_index # GET => affiche le form
+                check_path: login_index # POST => traite le form
+            
+            logout:
+                path: login_logout
+                target: login_index
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#the-firewall
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+
+        # Les ACL de notre API
+
+        # Login toujours accessible
+        - { path: ^/api/products, roles: PUBLIC_ACCESS }
+        - { path: ^/api/login_check, roles: PUBLIC_ACCESS }
+        - { path: ^/api/users, roles: PUBLIC_ACCESS }
+        # l'API secure nécessite une authentification
+        - { path: ^/api/secure, roles: IS_AUTHENTICATED_FULLY }
+                # Penser à utiliser bin/console debug:router pour avoir tous les motifs d'URL sous les yeux
+
+        # BACK
+        # page édition création 
+        - { path: ^/back/, roles: ROLE_MANAGER }
+        # back office pour les managers, uniquement en consultation
+        - { path: ^/back/(.*)/(new|edit), roles: ROLE_ADMIN}
+        # suppression que pour les admins (méthode HTTP POST)
+        - { path: ^/back/(.*)/\d+$, roles: ROLE_ADMIN, methods: [POST]} 
+
+
+
+    role_hierarchy:
+        # MANAGER hérite du rôle USER
+        # => si on souhaite que les managers et admins postent des critiques en leur nom
+        ROLE_MANAGER: ROLE_USER
+        # ADMIN hérite du rôle MANAGER
+        ROLE_ADMIN: ROLE_MANAGER
+
+when@test:
+    security:
+        password_hashers:
+            # By default, password hashers are resource intensive and take time. This is
+            # important to generate secure password hashes. In tests however, secure hashes
+            # are not important, waste resources and increase test times. The following
+            # reduces the work factor to the lowest possible values.
+            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+                algorithm: auto
+                cost: 4 # Lowest possible value for bcrypt
+                time_cost: 3 # Lowest possible value for argon
+                memory_cost: 10 # Lowest possible value for argon
+
+

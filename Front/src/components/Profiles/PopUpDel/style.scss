@@ -1,0 +1,68 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.PopUpDel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 1rem;
+  top: 6rem;
+  background-color: red;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  @include mixins.desktop {
+    width: 15rem;
+    height: 3rem;
+    left: 3.5rem;
+    top: 6rem;
+    font-size: 1.5rem;
+  }
+
+  transform-origin: left;
+  animation-duration: 2.2s;
+  animation-iteration-count: infinite;
+  &.bounce {
+    animation-name: bounce;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1)            translateX(-200rem); }
+
+  20%  { transform: scale(1.5, 0.98)    translateX(0); }
+  22%  { transform: scale(1.51, 0.96)   translateX(0); }
+  24%  { transform: scale(1.52, 0.94)   translateX(0); }
+  26%  { transform: scale(1.53, 0.92)   translateX(0); }
+  28%  { transform: scale(1.54, 0.90)   translateX(0); }
+  30%  { transform: scale(1.55, 0.88)   translateX(0); }
+  32%  { transform: scale(1.56, 0.86)   translateX(0); }
+  34%  { transform: scale(1.57, 0.84)   translateX(0); }
+  36%  { transform: scale(1.58, 0.82)   translateX(0); }
+  38%  { transform: scale(1.59, 0.80)   translateX(0); }
+  40%  { transform: scale(1.60, 0.78)   translateX(0); }
+
+  55%  { transform: scale(1.61, 0.76)   translateX(0); }
+  56%  { transform: scale(1.62, 0.74)   translateX(0); }
+  57%  { transform: scale(1.63, 0.72)   translateX(0); }
+  58%  { transform: scale(1.64, 0.70)   translateX(0); }
+  60%  { transform: scale(1)            translateX(-3px); }
+  61%  { transform: scale(1)            translateX(3px); }
+  62%  { transform: scale(1)            translateX(-3px); }
+  63%  { transform: scale(1)            translateX(3px); }
+  64%  { transform: scale(1)            translateX(-3px); }
+  65%  { transform: scale(1)            translateX(3px); }
+  66%  { transform: scale(1)            translateX(-3px); }
+  67%  { transform: scale(1)            translateX(3px); }
+  68%  { transform: scale(1)            translateX(-3px); }
+  69%  { transform: scale(1)            translateX(3px); }
+  70%  { transform: scale(1)            translateX(-2px); }
+  71%  { transform: scale(1)            translateX(1px); }
+  72%  { transform: scale(1)            translateX(0); }
+  85%  { transform: scale(1)            translateX(0); }
+
+  100% { transform: scale(1)            translateX(-200rem);}
+}

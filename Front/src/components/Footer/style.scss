@@ -1,0 +1,20 @@
+@use 'src/styles/vars';
+
+.footer{
+
+  background-color:vars.$headerFooterColor;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  
+  
+   .icon{
+    color: #F6C358
+   }
+
+  a:not(:last-child) {
+    margin-right:1rem;
+  }
+}

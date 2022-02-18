@@ -1,0 +1,88 @@
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
+.homeForm{
+
+  .select{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    @include mixins.desktop {
+      margin-left: 7rem;
+    margin-right: 7rem;
+    }
+  }
+  .welcome-title{
+    color: vars.$headerFooterColor;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight:bold;
+    @include mixins.desktop {
+     font-size:2.5rem;
+     margin-bottom:4rem;
+    }
+
+
+  }
+  
+  .submitButton {
+    border-radius: 10px;
+      border: 1px solid vars.$headerFooterColor;
+      background-color: vars.$headerFooterColor;
+      color:vars.$primaryColor;
+      font-family: vars.$font;
+      font-size: 1.3rem;
+      padding: 0.5rem;
+      font-weight:bold;
+  }
+  
+  
+  .submitButton:hover{
+  
+    background-color: vars.$primaryColor;
+      color:vars.$headerFooterColor;
+  }
+
+  .requiredInfos {
+    color: vars.$headerFooterColor;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: none;
+    &.display {
+      display: block;
+    }
+  }
+  
+}
+
+// Select styles
+.rmsc {
+  --rmsc-main: ##c0c0c0;
+  --rmsc-hover: #c0c0c0;
+  --rmsc-selected: #c0c0c0;
+  --rmsc-border:#2f4f4f;
+  --rmsc-gray:white;
+  --rmsc-bg: #2f4f4f;
+  --rmsc-p: 10px; /* Spacing */
+  --rmsc-radius: 10px; /* Radius */
+  --rmsc-h: 38px; /* Height */
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  @include mixins.desktop {
+    font-size: 1.3rem;
+  }
+  
+}
+
+// padding to center the text
+.dropdown-heading-value{
+  padding-left: 1.4rem;
+}
+
+.dropdown-heading-value{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.dropdown-heading{
+  font: 1rem;
+}
