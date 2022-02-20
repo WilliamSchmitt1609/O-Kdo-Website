@@ -56,12 +56,12 @@
 
 // Select styles
 .rmsc {
-  --rmsc-main: ##c0c0c0;
-  --rmsc-hover: #c0c0c0;
-  --rmsc-selected: #c0c0c0;
-  --rmsc-border:#2f4f4f;
-  --rmsc-gray:white;
-  --rmsc-bg: #2f4f4f;
+  --rmsc-main: ##c0c0c0 !important;
+  --rmsc-hover: #c0c0c0 !important;
+  --rmsc-selected: #c0c0c0 !important;
+  --rmsc-border:#2f4f4f !important;
+  --rmsc-gray:white !important;
+  --rmsc-bg: #2f4f4f !important;
   --rmsc-p: 10px; /* Spacing */
   --rmsc-radius: 10px; /* Radius */
   --rmsc-h: 38px; /* Height */
