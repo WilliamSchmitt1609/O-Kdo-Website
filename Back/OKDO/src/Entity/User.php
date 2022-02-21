@@ -25,6 +25,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"get_users_collection"})
      * @Groups({"get_profiles_collection"})
      * @Groups({"create_profiles_item"})
+     * @Groups({"get_login_collection"})
      */
     private $id;
 
