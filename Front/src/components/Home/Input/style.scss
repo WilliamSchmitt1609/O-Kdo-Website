@@ -62,13 +62,13 @@
   --rmsc-border:#2f4f4f !important;
   --rmsc-gray:white !important;
   --rmsc-bg: #2f4f4f !important;
-  --rmsc-p: 10px; /* Spacing */
-  --rmsc-radius: 10px; /* Radius */
-  --rmsc-h: 38px; /* Height */
-  margin-bottom: 2rem;
-  font-size: 1rem;
+  --rmsc-p: 10px !important; /* Spacing */
+  --rmsc-radius: 10px !important; /* Radius */
+  --rmsc-h: 38px !important; /* Height */
+  margin-bottom: 2rem !important;
+  font-size: 1rem !important;
   @include mixins.desktop {
-    font-size: 1.3rem;
+    font-size: 1.3rem !important;
   }
   
 }

@@ -46,7 +46,6 @@ const AppHeader = () => {
           dispatch((fadeSwitch()));
         };
       }, 2000);
-      console.log("ok");
       return;
     }
   }, [isLogged === true]);

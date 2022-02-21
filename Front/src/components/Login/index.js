@@ -25,7 +25,6 @@ const Login = ({ mail, password }) => {
 
   const isLogged = useSelector((state) => state.isLogged);
   const role = useSelector((state) => state.role);
-  console.log(role);
 
   // We define the wrapper
   const wrapperRef = useRef(null);
@@ -74,7 +73,7 @@ const Login = ({ mail, password }) => {
             )}
           {isLogged && (role[0] === 'ROLE_ADMIN' || role[0] === 'ROLE_MANAGER')
             && (
-              <a href="http://williamschmitt1609-server.eddi.cloud/projet-O-Kdo-back/OKDO/public/login" className="backoffice-access">Accéder au backoffice</a>
+              <a href="http://back.o-kdo.org" className="backoffice-access">Accéder au backoffice</a>
             )}
         </div>
 
