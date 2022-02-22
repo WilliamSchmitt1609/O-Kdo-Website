@@ -39,8 +39,8 @@ const middleware = (store) => (next) => (action) => {
     // We send a post request to the API with mail and PW, to get the token
     case LOG_IN:
       axios.post(
-        'http://back.o-kdo.org/api/login_check',
-        // 'http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/login_check',
+        'https://back.o-kdo.org/api/login_check',
+        // 'https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/login_check',
 
         {
           email: store.getState().mailLogin,
@@ -81,8 +81,8 @@ const middleware = (store) => (next) => (action) => {
     case GET_INFOS:
 
       axios.get(
-        'http://back.o-kdo.org/api/secure/login_check',
-        // 'http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/login_check',
+        'https://back.o-kdo.org/api/secure/login_check',
+        // 'https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/login_check',
         {
           headers: { Authorization: `Bearer ${store.getState().token}` },
         },
@@ -110,8 +110,8 @@ const middleware = (store) => (next) => (action) => {
     case FETCH_AGES:
       // Call  API for retrieves Ages options
       axios.get(
-        'http://back.o-kdo.org/api/ages',
-        // 'http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/ages',
+        'https://back.o-kdo.org/api/ages',
+        // 'https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/ages',
       )
         .then((response) => {
           const ages = response.data;
@@ -129,8 +129,8 @@ const middleware = (store) => (next) => (action) => {
     case FETCH_EVENTS:
       // Call  API for retrieves Events options
       axios.get(
-        'http://back.o-kdo.org/api/events',
-        // 'http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/events',
+        'https://back.o-kdo.org/api/events',
+        // 'https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/events',
       )
         .then((response) => {
           const events = response.data;
@@ -148,8 +148,8 @@ const middleware = (store) => (next) => (action) => {
     case FETCH_CATEGORIES:
       // Call  API for retrieves Categories options
       axios.get(
-        'http://back.o-kdo.org/api/categories',
-      //   'http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/categories',
+        'https://back.o-kdo.org/api/categories',
+      //   'https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/categories',
       )
         .then((response) => {
           const categories = response.data;
@@ -167,8 +167,8 @@ const middleware = (store) => (next) => (action) => {
     case FETCH_GENDER:
       // Call  API for retrieves Gender options
       axios.get(
-        'http://back.o-kdo.org/api/genres',
-        // 'http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/genres',
+        'https://back.o-kdo.org/api/genres',
+        // 'https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/genres',
       )
         .then((response) => {
           const gender = response.data;
@@ -186,8 +186,8 @@ const middleware = (store) => (next) => (action) => {
       // Call  API for retrieves saved profiles
     case FETCH_PROFILES:
       axios.get(
-        `http://back.o-kdo.org/api/secure/user/${store.getState().id}/profiles`,
-        // `http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/user/${store.getState().id}/profiles`
+        `https://back.o-kdo.org/api/secure/user/${store.getState().id}/profiles`,
+        // `https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/user/${store.getState().id}/profiles`
         {
           headers: { Authorization: `Bearer ${store.getState().token}` },
         },
@@ -207,8 +207,8 @@ const middleware = (store) => (next) => (action) => {
 
     case DELETE_PROFILE:
       axios.delete(
-        `http://back.o-kdo.org/api/secure/profiles/${store.getState().idToSupp}`,
-        // `http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idToSupp}`,
+        `https://back.o-kdo.org/api/secure/profiles/${store.getState().idToSupp}`,
+        // `https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idToSupp}`,
 
         {
           headers: { Authorization: `Bearer ${store.getState().token}` },
@@ -226,8 +226,8 @@ const middleware = (store) => (next) => (action) => {
 
     case UPDATE_PROFILE:
       axios.put(
-        // `http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idChosen}`,
-        `http://back.o-kdo.org/api/secure/profiles/${store.getState().idChosen}`,
+        // `https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idChosen}`,
+        `https://back.o-kdo.org/api/secure/profiles/${store.getState().idChosen}`,
 
         {
           name: store.getState().editNameProfileInput,
@@ -257,8 +257,8 @@ const middleware = (store) => (next) => (action) => {
 
     case FETCH_PRODUCTS:
       axios.get(
-        // 'http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/products',
-        'http://back.o-kdo.org/api/products',
+        // 'https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/products',
+        'https://back.o-kdo.org/api/products',
 
         {
           headers: {
@@ -284,8 +284,8 @@ const middleware = (store) => (next) => (action) => {
 
     case SEARCH_TO_API:
       axios.post(
-        // `http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idChosen}`,
-        'http://back.o-kdo.org/api/search',
+        // `https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idChosen}`,
+        'https://back.o-kdo.org/api/search',
 
         {
           categories: store.getState().categoriesSearch.map((item) => (item.id)),
@@ -317,8 +317,8 @@ const middleware = (store) => (next) => (action) => {
 
     case SAVE_PROFIL_API:
       axios.post(
-        // `http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idChosen}`,
-        `http://back.o-kdo.org/api/secure/user/${store.getState().id}/profiles`,
+        // `https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idChosen}`,
+        `https://back.o-kdo.org/api/secure/user/${store.getState().id}/profiles`,
 
         {
           name: store.getState().registeredProfil,
@@ -348,8 +348,8 @@ const middleware = (store) => (next) => (action) => {
 
     case CREATE_ACCOUNT:
       axios.post(
-        // `http://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idChosen}`,
-        'http://back.o-kdo.org/api/users',
+        // `https://marchandladislas-server.eddi.cloud/OKDO/projet-O-Kdo-back/OKDO/public/api/secure/profiles/${store.getState().idChosen}`,
+        'https://back.o-kdo.org/api/users',
 
         {
           email: store.getState().mailSignIn,
